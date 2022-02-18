@@ -3,7 +3,6 @@
 <head>
     <title>Express API's</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-    <script src="./lessons.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
@@ -189,7 +188,7 @@
             computed: {},
             methods: {
                 getAllCourses(){
-                    fetch(`https://web-individual-course-work-2.herokuapp.com//get-lessons`)
+                    fetch(`https://web-individual-course-work-2.herokuapp.com/get-lessons`)
                     .then(response => response.json())
                     .then(data => {
                         this.allCourses = data;
@@ -201,7 +200,7 @@
                         headers: {"Content-Type": "application/json",'Accept': 'application/json' },
                         body: JSON.stringify({keyword: this.searchData})
                     };
-                    fetch(`https://web-individual-course-work-2.herokuapp.com//search-lessons`, requestOptions)
+                    fetch(`https://web-individual-course-work-2.herokuapp.com/search-lessons`, requestOptions)
                         .then(response => response.json())
                         .then(data => {
                             this.allCourses = data;
@@ -333,7 +332,7 @@
                         headers: {"Content-Type": "application/json",'Accept': 'application/json' },
                         body: JSON.stringify({cart: this.cart, user: user} )
                     };
-                    fetch(`https://web-individual-course-work-2.herokuapp.com//buy-lesson`, requestOptions)
+                    fetch(`https://web-individual-course-work-2.herokuapp.com/buy-lesson`, requestOptions)
                         .then(response => response.json())
                         .then(data => {
                             $('#successModal').modal('show');
