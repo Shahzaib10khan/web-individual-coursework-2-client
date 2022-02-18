@@ -189,7 +189,7 @@
             computed: {},
             methods: {
                 getAllCourses(){
-                    fetch(`http://127.0.0.1:5000/get-lessons`)
+                    fetch(`https://web-individual-course-work-2.herokuapp.com//get-lessons`)
                     .then(response => response.json())
                     .then(data => {
                         this.allCourses = data;
@@ -201,7 +201,7 @@
                         headers: {"Content-Type": "application/json",'Accept': 'application/json' },
                         body: JSON.stringify({keyword: this.searchData})
                     };
-                    fetch(`http://127.0.0.1:5000/search-lessons`, requestOptions)
+                    fetch(`https://web-individual-course-work-2.herokuapp.com//search-lessons`, requestOptions)
                         .then(response => response.json())
                         .then(data => {
                             this.allCourses = data;
@@ -333,7 +333,7 @@
                         headers: {"Content-Type": "application/json",'Accept': 'application/json' },
                         body: JSON.stringify({cart: this.cart, user: user} )
                     };
-                    fetch(`http://127.0.0.1:5000/buy-lesson`, requestOptions)
+                    fetch(`https://web-individual-course-work-2.herokuapp.com//buy-lesson`, requestOptions)
                         .then(response => response.json())
                         .then(data => {
                             $('#successModal').modal('show');
